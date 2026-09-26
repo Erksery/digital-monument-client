@@ -1,0 +1,16 @@
+---
+export const prerender = false;
+
+import { MyFeedbackList } from "@/features/feedback/MyFeedbackList";
+import { ProfilesList } from "@/features/profile/list/ProfilesList";
+import { UserMainInfo } from "@/features/user/UserMainInfo";
+import Layout from "@/layouts/Layout.astro";
+
+const { account } = Astro.params;
+---
+
+<Layout>
+  <UserMainInfo client:load userId={account} />
+  <ProfilesList client:load userId={account} />
+  <MyFeedbackList client:load />
+</Layout>

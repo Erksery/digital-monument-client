@@ -1,0 +1,52 @@
+.qrcode_container {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .download_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .format_label {
+    margin-bottom: 2px;
+  }
+
+  .format_switch {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+  }
+
+  .icon_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.178);
+    border: solid 1px var(--border-color);
+    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .input_root {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+  }
+
+  .button_root {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+  }
+}

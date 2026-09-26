@@ -1,0 +1,81 @@
+---
+import { ArrowRight, PlayCircle } from "lucide-react";
+import LandingGallery from "./LandingGallery";
+import styles from "./index.module.scss";
+
+const STATS = [
+  { value: "100+", label: "Страниц создано" },
+  { value: "42", label: "QR-табличек" },
+  { value: "80+", label: "Пользователей" },
+];
+---
+
+<section id="hero" class={styles.landing_hero}>
+  <div class={styles.landing_hero_bg}>
+    <div class={styles.landing_hero_glow}>
+      <div class={styles.gallery}>
+        <LandingGallery client:load fit={0.7} />
+      </div>
+    </div>
+  </div>
+
+  <div class={styles.landing_hero_container}>
+    <div class={styles.landing_hero_grid}>
+      <div class={styles.landing_hero_content}>
+        <div class={styles.landing_hero_badge}>
+          <span class={styles.landing_hero_badge_dot}></span>
+          <span class={styles.landing_hero_badge_text}>
+            Место памяти &mdash; нам доверяют 100+ семей
+          </span>
+        </div>
+
+        <h1 class={styles.landing_hero_title}>
+          Каждый заслуживает
+          <br />
+
+          <em class={styles.landing_hero_title_italic}>памяти.</em>
+        </h1>
+        <h2 class={styles.visually_hidden}>
+          Цифровые мемориалы и страницы памяти с QR-кодом
+        </h2>
+
+        <p class={styles.landing_hero_subtitle}>
+          Место памяти создает красивые, прочные цифровые мемориалы, которые
+          семья и друзья могут посетить из любой точки мира - в комплекте с
+          биографией, фотографиями, данью и физической QR-табликой для
+          мемориала.
+        </p>
+
+        <div class={styles.landing_hero_actions}>
+          <a
+            href="/profile/create"
+            class={`${styles.landing_hero_btn} ${styles.landing_hero_btn_primary}`}
+          >
+            Создать страницу
+            <ArrowRight size={16} />
+          </a>
+          <a
+            href="/profile/4b3fc854-a588-4a26-b297-e59f0f75904a"
+            class={`${styles.landing_hero_btn} ${styles.landing_hero_btn_secondary}`}
+          >
+            <PlayCircle size={16} />
+            Пример
+          </a>
+        </div>
+
+        <ul class={styles.landing_hero_stats}>
+          {
+            STATS.map((s) => (
+              <li class={styles.landing_hero_stat_item}>
+                <strong class={styles.landing_hero_stat_value}>
+                  {s.value}
+                </strong>
+                <span class={styles.landing_hero_stat_label}>{s.label}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

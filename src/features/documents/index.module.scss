@@ -1,0 +1,36 @@
+.markdown {
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: initial;
+  font-size: 1rem;
+  line-height: 1.6;
+
+  color: black;
+  background-color: white;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  p,
+  li,
+  blockquote {
+    font-family: inherit;
+  }
+
+  a {
+    font-family: inherit;
+  }
+
+  code,
+  pre {
+    font-family: monospace;
+  }
+}

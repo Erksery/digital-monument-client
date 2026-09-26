@@ -1,0 +1,23 @@
+---
+export const prerender = false;
+
+import { Biography } from "@/features/profile/components/biography/Biography";
+import { Feedback } from "@/features/feedback/Feedback";
+import { Gallery } from "@/features/profile/components/gallery/Gallery";
+import { Place } from "@/features/profile/components/place/Place";
+import { Qrcode } from "@/features/profile/components/qrcode/Qrcode";
+import { MainBio } from "@/features/profile/components/main/MainBio";
+
+import Layout from "@/layouts/Layout.astro";
+
+const { profile } = Astro.params;
+---
+
+<Layout>
+  <MainBio client:load profileId={profile} />
+  <Biography client:only="react" profileId={profile} />
+  <Gallery client:load profileId={profile} />
+  <Feedback client:load profileId={profile} />
+  <Place client:load profileId={profile} />
+  <Qrcode client:only="react" />
+</Layout>

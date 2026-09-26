@@ -1,0 +1,75 @@
+---
+import { Flame, Mail } from "lucide-react";
+import styles from "./index.module.scss";
+
+const LINKS = {
+  Сервис: [
+    { label: "Создать страницу памяти", href: "/profile/create" },
+    { label: "Расширенная страница", href: "/prices/premium" },
+    { label: "Ответы на вопросы", href: "/#faq" },
+  ],
+
+  Компания: [
+    { label: "О проекте", href: "/about" },
+    { label: "Контакты", href: "/contacts" },
+  ],
+
+  Документы: [
+    { label: "Политика конфиденциальности", href: "/document/privacy" },
+    { label: "Условия использования", href: "/document/terms" },
+    { label: "Публичная оферта", href: "/document/offer" },
+  ],
+};
+---
+
+<footer class={styles.footer}>
+  <div class={styles.container}>
+    <div class={styles.grid}>
+      <div class={styles.brand}>
+        <div class={styles.logo}>
+          <Flame size={18} />
+          <span>Memory Code</span>
+        </div>
+
+        <p>
+          Цифровые страницы памяти, которые помогают сохранить историю жизни,
+          фотографии и воспоминания для будущих поколений.
+        </p>
+      </div>
+
+      {
+        Object.entries(LINKS).map(([title, links]) => (
+          <nav class={styles.links_column}>
+            <h3 class={styles.links_title}>{title}</h3>
+
+            <ul class={styles.links_list}>
+              {links.map((link) => (
+                <li>
+                  <a class={styles.links_link} href={link.href}>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))
+      }
+    </div>
+
+    <div class={styles.divider}></div>
+
+    <div class={styles.bottom}>
+      <span>© {new Date().getFullYear()} Memory Code</span>
+
+      <p>
+        <Flame size={12} />
+        Память, которая остается с будущими поколениями
+      </p>
+
+      <a href="mailto:hello@memorycode.ru">
+        <Mail size={14} />
+        hello@memorycode.ru
+      </a>
+    </div>
+  </div>
+</footer>

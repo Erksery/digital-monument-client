@@ -1,0 +1,125 @@
+---
+import { Check, Sparkles } from "lucide-react";
+import styles from "./index.module.scss";
+
+const PLANS = [
+  {
+    name: "Краткая страница",
+    price: "Бесплатно",
+    link: "free",
+    period: null,
+    tagline: "Достойное начало для сохранения памяти",
+    featured: false,
+    features: [
+      "Базовая биография и страница памяти",
+      "Доступ с любого устройства",
+      "QR-код для печати",
+    ],
+    cta: "Создать страницу памяти бесплатно",
+    ctaAccent: false,
+  },
+  {
+    name: "Расширенная страница",
+    price: "3000 ₽",
+    link: "premium",
+    period: "/единовременно",
+    tagline: "Выбор большинства семей",
+    featured: true,
+    features: [
+      "Всё, что входит в Краткая страница",
+      "Фотогалерея",
+      "Полная биография с расширенным форматированием",
+      "Настройки приватности (публично / только для семьи)",
+      "Неограниченное количество сообщений соболезнования",
+      "Совместное управление для членов семьи",
+      "Приоритетная поддержка",
+    ],
+    cta: "Оформить",
+    ctaAccent: true,
+  },
+  {
+    name: "Все возможности",
+    price: "6500 ₽",
+    link: "monument",
+    period: "/единовременно",
+    tagline: "Мемориал, который сохранится на долгие годы",
+    featured: false,
+    features: [
+      "Всё, что входит в «Расширенная страница»",
+      "Физическая QR-табличка",
+      "Доставка по всей России",
+      "Помощь в создании профиля",
+    ],
+    cta: "Оформить",
+    ctaAccent: false,
+  },
+];
+---
+
+<section id="pricing" class={styles.pricing_section}>
+  <div class={styles.pricing_container}>
+    <div class={styles.pricing_heading}>
+      <p class={styles.pricing_subtitle}>Тарифы и пакеты</p>
+      <h2 class={styles.pricing_title}>Подходящий вариант для каждой семьи</h2>
+    </div>
+
+    <div class={styles.pricing_grid}>
+      {
+        PLANS.map((plan) => (
+          <div
+            class:list={[
+              styles.pricing_card,
+              { [styles.is_featured]: plan.featured },
+            ]}
+          >
+            {plan.featured && (
+              <div class={styles.popular_badge}>
+                <Sparkles size={11} />
+                <span>Оптимальный вариант</span>
+              </div>
+            )}
+
+            <div class={styles.plan_header}>
+              <p class={styles.plan_name}>{plan.name}</p>
+              <div class={styles.price_wrapper}>
+                <span class={styles.price_amount}>{plan.price}</span>
+                {plan.period && (
+                  <span class={styles.price_period}>{plan.period}</span>
+                )}
+              </div>
+              <p class={styles.plan_tagline}>{plan.tagline}</p>
+            </div>
+
+            <div class={styles.card_divider} />
+
+            <ul class={styles.features_list}>
+              {plan.features.map((feat) => (
+                <li class={styles.features_item}>
+                  <div class={styles.check_icon_wrapper}>
+                    <Check size={14} />
+                  </div>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={`/prices/${plan.link}`}
+              class:list={[
+                styles.cta_button,
+                { [styles.cta_accent]: plan.ctaAccent },
+              ]}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <p class={styles.pricing_footer_text}>
+    Все тарифы включают безопасное хранение данных, адаптацию для мобильных
+    устройств и поддержку для семьи.
+  </p>
+</section>

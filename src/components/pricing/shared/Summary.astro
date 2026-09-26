@@ -1,0 +1,50 @@
+---
+import styles from "./index.module.scss";
+
+interface SummaryRow {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  title?: string;
+  rows: SummaryRow[];
+  totalLabel: string;
+  totalValue: string;
+  note: string;
+}
+
+const {
+  title = "Сводка заказа",
+  rows,
+  totalLabel,
+  totalValue,
+  note,
+} = Astro.props;
+---
+
+<div class={styles.summary}>
+  <div class={styles.summary_header}>
+    <p>{title}</p>
+  </div>
+
+  <div class={styles.summary_body}>
+    {
+      rows.map((row) => (
+        <div class={styles.summary_row}>
+          <span>{row.label}</span>
+          <strong>{row.value}</strong>
+        </div>
+      ))
+    }
+
+    <div class={styles.summary_total}>
+      <span>{totalLabel}</span>
+      <strong>{totalValue}</strong>
+    </div>
+  </div>
+
+  <div class={styles.summary_footer}>
+    <p>{note}</p>
+  </div>
+</div>

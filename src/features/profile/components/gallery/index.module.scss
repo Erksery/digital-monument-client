@@ -1,0 +1,41 @@
+.gallery_container {
+  margin-top: 100px;
+  .title {
+    text-transform: uppercase;
+  }
+}
+
+.masonry {
+  column-count: 5;
+  column-gap: 16px;
+}
+
+.masonry_item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.masonry_item img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .masonry {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 900px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .masonry {
+    column-count: 2;
+  }
+}

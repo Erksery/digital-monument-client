@@ -1,0 +1,80 @@
+.person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+
+  .user_info {
+    .priced {
+      width: fit-content;
+      padding: 0 8px;
+      background-color: var(--gold-glow);
+      border-radius: 8px;
+      border: solid 1px var(--gold-primary);
+      box-sizing: border-box;
+      margin-top: 4px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .email {
+      color: gray;
+      font-size: 14px;
+    }
+  }
+}
+
+.avatar {
+  border-radius: 12px;
+  border: solid 1px var(--gold-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--gold-glow);
+  color: white;
+
+  font-weight: 700;
+  text-transform: uppercase;
+
+  user-select: none;
+
+  &[data-size="s"] {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  &[data-size="m"] {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+
+    border-radius: 12px;
+    font-size: 18px;
+  }
+
+  &[data-size="l"] {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+
+    border-radius: 24px;
+    font-size: 30px;
+  }
+
+  &[data-size="xl"] {
+    width: 112px;
+    height: 112px;
+    min-width: 112px;
+
+    border-radius: 24px;
+    font-size: 30px;
+  }
+}

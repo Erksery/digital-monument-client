@@ -1,0 +1,129 @@
+---
+import "@fontsource/inter";
+import "@mantine/core/styles.css";
+import "@fontsource/lora/400.css";
+import "@fontsource/lora/700.css";
+import "@fontsource/lora/400-italic.css";
+import Header from "./header/HeaderLayout.astro";
+import Footer from "./footer/FooterLayout.astro";
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Astro Basics</title>
+  </head>
+
+  <body>
+    <Header />
+    <main class="layout-wrapper">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --max-content-width: 1350px;
+    --side-padding: 1.2rem;
+    --text-color: #c9c9c9;
+    --card-background: #1a1a1a;
+
+    --gold-primary: #c9a455;
+    --gold-glow: rgba(201, 164, 85, 0.196);
+    --text-muted: rgb(151, 151, 151);
+    --border-color: #404040;
+
+    --bg-container: #161616;
+    --border-container: rgba(255, 255, 255, 0.07);
+    --subtitle: gray;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #131314;
+    color: var(--text-color);
+    scrollbar-gutter: stable;
+
+    scroll-behavior: smooth;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    font-size: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.25s;
+    background-color: transparent;
+  }
+
+  a {
+    cursor: pointer;
+    transition: background-color 0.25s;
+  }
+
+  a,
+  a:visited {
+    color: inherit;
+    text-decoration: inherit;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a:hover,
+    button:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--hover-color, currentColor),
+        transparent 90%
+      );
+    }
+  }
+
+  .layout-wrapper {
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding-inline: 12px;
+    padding-bottom: 40px;
+    padding-top: 60px;
+
+    min-height: 80dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --side-padding: 2rem;
+    }
+  }
+</style>

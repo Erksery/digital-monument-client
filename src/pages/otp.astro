@@ -1,0 +1,16 @@
+---
+import { OtpForm } from "@/features/auth/OtpForm";
+import Layout from "@/layouts/Layout.astro";
+
+const userId = Astro.url.searchParams.get("userId");
+---
+
+<Layout>
+  {
+    userId ? (
+      <OtpForm client:load userId={userId} />
+    ) : (
+      <p>Не указан пользователь для подтверждения.</p>
+    )
+  }
+</Layout>

@@ -1,0 +1,36 @@
+.address {
+  margin-bottom: 20px;
+
+  .address_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+
+    span,
+    p {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    p {
+      font-size: small;
+      flex-shrink: 0;
+    }
+
+    span {
+      flex: 1;
+      min-width: 0;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      p {
+        flex-shrink: 1;
+        color: gray;
+      }
+    }
+  }
+}

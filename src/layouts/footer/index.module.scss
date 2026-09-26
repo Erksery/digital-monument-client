@@ -1,0 +1,162 @@
+$font-sans: "Inter", system-ui, sans-serif;
+$font-serif: "Playfair Display", Georgia, serif;
+
+$color-bg: #0a0a0a;
+$color-text: #f5f5f5;
+$color-gold: #c9a455;
+$color-muted: #8a8a8a;
+$color-muted-dark: #666;
+$color-border: rgba(255, 255, 255, 0.08);
+
+.footer {
+  margin-top: auto;
+  padding: 2rem 0 2rem;
+
+  background: $color-bg;
+  border-top: 1px solid $color-border;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.brand {
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+
+    color: $color-text;
+
+    svg {
+      color: $color-gold;
+    }
+
+    span {
+      font-family: $font-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  p {
+    max-width: 340px;
+
+    color: $color-muted;
+    font-family: $font-sans;
+    line-height: 1.8;
+  }
+}
+
+.links_title {
+  margin-bottom: 1rem;
+
+  color: $color-gold;
+  font-family: $font-sans;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.links_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.links_link {
+  color: $color-muted-dark;
+
+  font-family: $font-sans;
+  font-size: 0.92rem;
+  text-decoration: none;
+
+  transition: color 0.2s;
+
+  &:visited {
+    color: $color-muted-dark;
+  }
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.divider {
+  height: 1px;
+  margin-bottom: 1.5rem;
+  background: $color-border;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  color: #555;
+  font-family: $font-sans;
+  font-size: 0.82rem;
+
+  span,
+  p,
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+
+  svg {
+    color: $color-gold;
+    opacity: 0.75;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand p {
+    max-width: none;
+  }
+}

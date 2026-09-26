@@ -1,0 +1,72 @@
+$font-sans: "Inter", system-ui, sans-serif;
+$font-serif: "Playfair Display", Georgia, serif;
+
+$color-gold: #c9a455;
+$color-bg: transparent;
+$color-card: #1a1a1a;
+$color-text: #f5f5f5;
+$color-muted: #8a8a8a;
+
+.policy_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.policy_item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  color: $color-muted;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  cursor: pointer;
+  font-family: $font-sans !important;
+
+  a,
+  a:visited {
+    color: $color-gold;
+    text-decoration: underline;
+  }
+
+  .policy_label {
+    user-select: none;
+    cursor: default;
+  }
+}
+
+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.375rem;
+  cursor: pointer;
+
+  svg {
+    color: $color-bg;
+  }
+}
+
+.checkbox_checked {
+  background: $color-gold;
+  border-color: $color-gold;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hidden_checkbox {
+  display: none;
+  overflow: hidden;
+}

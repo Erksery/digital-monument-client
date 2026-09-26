@@ -1,0 +1,9 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FaqComponent } from "@features/faq/Faq";
+---
+
+<Layout>
+  <h1>Вопросы и ответы</h1>
+  <FaqComponent client:only="react" />
+</Layout>

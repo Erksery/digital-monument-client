@@ -1,0 +1,83 @@
+---
+import styles from "./index.module.scss";
+import HeroSection from "../shared/Hero.astro";
+import FeaturesSection from "../shared/Features.astro";
+import SummarySection from "../shared/Summary.astro";
+import { PlanCheckout } from "../shared/PlanCheckout";
+
+export const FREE_HERO = {
+  badge: "Бесплатный тариф",
+  title: "Начните сохранять память уже сегодня",
+  description: "Создайте красивую страницу памяти...",
+  price: "Бесплатно",
+};
+
+export const FREE_FEATURES = {
+  features: [
+    "Базовая биография и страница памяти",
+    "До 5 фотографий",
+    "Публичная стена соболезнований (до 10 сообщений)",
+    "Персональная ссылка вида memorycode.io/name",
+    "Доступ с любого устройства",
+    "Возможность перейти на платный тариф позже",
+  ],
+};
+
+export const FREE_SUMMARY = {
+  rows: [
+    {
+      label: "Бесплатный тариф",
+      value: "0 ₽",
+    },
+    {
+      label: "Хранение",
+      value: "Включено",
+    },
+  ],
+
+  totalLabel: "Итого сегодня",
+  totalValue: "0 ₽",
+
+  note: "Банковская карта не требуется. Вы сможете перейти на платный тариф в любой момент из личного кабинета.",
+};
+
+export const FREE_POLICIES = [
+  {
+    id: "terms",
+    parts: [
+      { text: "Я принимаю " },
+      { text: "Условия использования", href: "/document/terms" },
+      { text: " и " },
+      { text: "Публичную оферту", href: "/offer" },
+    ],
+  },
+  {
+    id: "privacy",
+    parts: [
+      { text: "Я ознакомился с " },
+      { text: "Политикой конфиденциальности", href: "/document/privacy" },
+    ],
+  },
+  {
+    id: "data",
+    parts: [{ text: "Я даю согласие на обработку персональных данных" }],
+  },
+];
+---
+
+<div class={styles.page}>
+  <HeroSection {...FREE_HERO} />
+
+  <div class={styles.layout}>
+    <div class={styles.content}>
+      <FeaturesSection features={FREE_FEATURES.features} />
+    </div>
+
+    <aside class={styles.sidebar}>
+      <SummarySection {...FREE_SUMMARY} />
+      <a href="/profile/create" class={styles.activate_button}>
+        Перейти у созданию профиля
+      </a>
+    </aside>
+  </div>
+</div>

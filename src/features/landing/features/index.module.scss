@@ -1,0 +1,108 @@
+// Переменные
+$font-sans: "Inter", system-ui, sans-serif;
+$font-serif: "Playfair Display", Georgia, serif;
+
+$color-gold: #c9a455;
+$color-gold-hover: #d4b060;
+$color-bg-dark: #121212;
+$color-card-bg: #1a1a1a;
+$color-text-light: #f5f5f5;
+$color-text-muted: #8a8a8a;
+
+.features_section {
+  background: $color-bg-dark;
+
+  .features_container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .features_heading {
+    text-align: center;
+  }
+
+  .features_subtitle {
+    font-family: $font-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 1rem;
+  }
+
+  .features_title {
+    font-family: $font-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: $color-text-light;
+    line-height: 1.2;
+  }
+
+  // Сетка (Базовая мобильная версия — 1 колонка)
+  .features_grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  // Карточки
+  .features_card {
+    padding: 1.75rem;
+    border-radius: 0.75rem;
+    background: $color-card-bg;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      border-color: rgba($color-gold, 0.2);
+    }
+  }
+
+  .features_card_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    background: rgba($color-gold, 0.08);
+    border: 1px solid rgba($color-gold, 0.2);
+    color: $color-gold;
+    margin-bottom: 1.25rem;
+  }
+
+  .features_card_title {
+    font-family: $font-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $color-text-light;
+    margin-bottom: 0.75rem;
+  }
+
+  .features_card_desc {
+    font-family: $font-sans;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: $color-text-muted;
+  }
+}
+
+/* --- Медиа-запросы вынесены отдельно для безопасной компиляции в Astro --- */
+
+// Планшеты (от 640px) — 2 колонки
+@media (min-width: 640px) {
+  .features_section {
+    .features_grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+// Компьютеры и ноутбуки (от 1024px) — Строго 3 колонки
+@media (min-width: 1024px) {
+  .features_section {
+    .features_grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}

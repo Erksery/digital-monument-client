@@ -1,0 +1,95 @@
+---
+import styles from "./index.module.scss";
+
+import { LayoutGrid, Info, CircleQuestionMark, Contact } from "@lucide/astro";
+
+import { Menu } from "@/components/header/Menu";
+import { UserInfo } from "@/components/header/UserInfo";
+
+const navLinks = [
+  { path: "", label: "О сервисе", Icon: "Info", section: "features" },
+  {
+    path: "/#pricing",
+    label: "Тарифы",
+    Icon: "LayoutGrid",
+    section: "pricing",
+  },
+  {
+    path: "/#faq",
+    label: "Вопросы и ответы",
+    Icon: "CircleQuestionMark",
+    section: "faq",
+  },
+  {
+    path: "/#contacts",
+    label: "Контакты",
+    Icon: "Contact",
+    section: "contacts",
+  },
+];
+
+const icons = {
+  pricing: LayoutGrid,
+  features: Info,
+  faq: CircleQuestionMark,
+  contacts: Contact,
+};
+---
+
+<div class={styles.header_container}>
+  <header class={styles.header}>
+    <div>
+      <Menu client:only="react" links={navLinks} variant="navigation" />
+    </div>
+
+    <div class={styles.links_list}>
+      {
+        navLinks.map((link) => {
+          const Icon = icons[link.section as keyof typeof icons];
+
+          return (
+            <a
+              href={link.path || `/#${link.section}`}
+              class={`${styles.link} js-nav-link`}
+              data-section={link.section}
+            >
+              <Icon size={16} />
+              {link.label}
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <div>
+      <UserInfo client:only="react" />
+    </div>
+  </header>
+</div>
+
+<script>
+  const links = document.querySelectorAll(".js-nav-link");
+
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (window.location.pathname !== "/") return;
+
+      const targetSection = link.getAttribute("data-section");
+
+      if (!targetSection) return;
+
+      const element = document.getElementById(targetSection);
+
+      if (element) {
+        e.preventDefault();
+
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        history.replaceState(null, "", `/#${targetSection}`);
+      }
+    });
+  });
+</script>

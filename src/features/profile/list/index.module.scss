@@ -1,0 +1,33 @@
+$gold-primary: var(--gold-primary, #d4af37);
+$card-bg: var(--card-background, #1a1b1e);
+$border-color: var(--border-color, #2c2e33);
+$text-muted: var(--text-muted, #909296);
+
+.profile_card {
+  padding: 1.5rem;
+  background-color: $card-bg;
+  border: 1px solid color-mix(in srgb, $border-color 40%, transparent);
+  border-radius: 0.75rem;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  align-self: start;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: color-mix(in srgb, $border-color 40%, transparent);
+  margin: 0.5rem 0;
+}

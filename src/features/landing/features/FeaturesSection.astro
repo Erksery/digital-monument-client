@@ -1,0 +1,73 @@
+---
+import {
+  Archive,
+  QrCode,
+  ShieldCheck,
+  MessageCircle,
+  Images,
+  Users,
+} from "lucide-react";
+import styles from "./index.module.scss";
+
+const FEATURES = [
+  {
+    icon: Archive,
+    title: "Надежное хранение",
+    description:
+      "Надежная инфраструктура, ежедневное резервное копирование и постоянный контроль работоспособности помогают сохранить семейные воспоминания и обеспечить доступ к ним в любое время.",
+  },
+  {
+    icon: QrCode,
+    title: "Физическая QR-табличка",
+    description:
+      "Табличка из нержавеющей стали с долговечной лазерной гравировкой и QR-кодом. Подходит для установки на памятниках, мемориалах и других памятных местах.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Контроль приватности",
+    description:
+      "Вы сами решаете, кто сможет видеть страницу. Сделайте ее открытой, доступной только близким или полностью закрытой. Все сообщения можно проверять перед публикацией.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Стена памяти",
+    description:
+      "Родные, друзья и коллеги могут делиться воспоминаниями, фотографиями и словами поддержки, сохраняя важные моменты жизни в одном месте.",
+  },
+  {
+    icon: Images,
+    title: "Медиагалерея",
+    description:
+      "Храните фотографии и видеозаписи, объединяйте их по событиям или периодам жизни и создавайте цифровую историю, к которой всегда легко вернуться.",
+  },
+  {
+    icon: Users,
+    title: "Совместное управление",
+    description:
+      "Приглашайте членов семьи для совместного ведения страницы. Добавляйте новые материалы вместе и сохраняйте семейную историю общими усилиями.",
+  },
+];
+---
+
+<section id="features" class={styles.features_section}>
+  <div class={styles.features_container}>
+    <div class={styles.features_heading}>
+      <p class={styles.features_subtitle}>Почему Место памяти</p>
+      <h2 class={styles.features_title}>Семейная история в цифровом формате</h2>
+    </div>
+
+    <div class={styles.features_grid}>
+      {
+        FEATURES.map((feat) => (
+          <div class={styles.features_card}>
+            <div class={styles.features_card_icon}>
+              <feat.icon size={22} />
+            </div>
+            <h3 class={styles.features_card_title}>{feat.title}</h3>
+            <p class={styles.features_card_desc}>{feat.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

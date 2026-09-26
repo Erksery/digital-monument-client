@@ -1,0 +1,26 @@
+---
+import { Check } from "lucide-react";
+import styles from "./index.module.scss";
+
+interface Props {
+  title?: string;
+  features: string[];
+}
+
+const { title = "Что входит", features } = Astro.props;
+---
+
+<section class={styles.card}>
+  <h2 class={styles.card_title}>{title}</h2>
+
+  <ul class={styles.feature_list}>
+    {
+      features.map((feature) => (
+        <li class={styles.feature_item}>
+          <Check size={16} />
+          <span>{feature}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

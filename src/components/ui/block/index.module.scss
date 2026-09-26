@@ -1,0 +1,41 @@
+$gold-color: #d4af37;
+
+$gold-primary: #c9a455;
+$gold-glow: rgba(201, 164, 85, 0.196);
+$text-muted: rgb(151, 151, 151);
+$border-color: #515151;
+
+.block_container {
+  margin-top: 100px;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    .title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(0.6rem, 3vw, 1rem);
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: $gold-primary;
+      white-space: nowrap;
+      margin: 0;
+    }
+
+    .line_left {
+      width: 32px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, $gold-primary);
+    }
+
+    .line_right {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba($gold-primary, 0.4), transparent);
+    }
+  }
+}

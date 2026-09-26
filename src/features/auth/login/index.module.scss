@@ -1,0 +1,142 @@
+.auth_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 15px;
+
+    background-color: var(--bg-container);
+    border: 2px solid var(--border-container);
+    border-radius: 18px;
+
+    .form_header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+
+      .icon_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        color: var(--gold-primary);
+        border: solid 1px var(--gold-primary);
+        border-radius: 12px;
+        background-color: color-mix(
+          in srgb,
+          var(--gold-primary),
+          transparent 90%
+        );
+      }
+
+      .title {
+        margin-bottom: 5px;
+        margin-top: 15px;
+        text-align: center;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 25px;
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+
+        .gold {
+          color: var(--gold-primary);
+          font-weight: bolder;
+          font-style: italic;
+        }
+      }
+
+      .subtitle {
+        color: var(--subtitle);
+        font-size: 13px;
+        text-align: center;
+      }
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      margin-top: 20px;
+    }
+
+    .label {
+      margin-bottom: 6px;
+
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .input {
+      height: 45px;
+
+      border: 2px solid var(--border-container);
+      border-radius: 10px;
+
+      background-color: #202020;
+
+      transition:
+        border-color 150ms ease,
+        background-color 150ms ease;
+
+      &:focus {
+        border-color: var(--gold-primary);
+        background-color: #202020;
+      }
+
+      &::placeholder {
+        color: var(--subtitle);
+      }
+    }
+
+    .section {
+      color: var(--subtitle);
+    }
+
+    .forgot_container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 5px;
+
+      p {
+        color: var(--gold-primary);
+      }
+    }
+
+    .submit_button {
+      border-radius: 10px;
+
+      &:hover {
+        background-color: color-mix(
+          in srgb,
+          var(--gold-primary),
+          transparent 30%
+        ) !important;
+      }
+    }
+    .submit_label {
+      font-size: 15px;
+      color: black;
+    }
+
+    .reg_container {
+      display: flex;
+      justify-content: center;
+      gap: 3px;
+
+      .gold {
+        color: var(--gold-primary);
+      }
+    }
+  }
+}

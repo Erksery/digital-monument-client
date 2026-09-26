@@ -1,0 +1,73 @@
+$font-sans: "Inter", system-ui, sans-serif;
+$font-serif: "Playfair Display", Georgia, serif;
+
+$color-gold: #c9a455;
+$color-bg: transparent;
+$color-card: #1a1a1a;
+$color-text: #f5f5f5;
+$color-muted: #8a8a8a;
+
+* {
+  font-family: $font-sans;
+}
+
+.page {
+  min-height: 100vh;
+  background: $color-bg;
+  color: $color-text;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: start;
+  position: sticky;
+  top: 90px;
+}
+
+.activate_button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.95rem 1.25rem;
+
+  border: 1px solid rgba(201, 164, 85, 0.45);
+  border-radius: 0.875rem;
+
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+
+  background: rgba(201, 164, 85, 0.12);
+  color: $color-gold !important;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}

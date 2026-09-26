@@ -1,0 +1,320 @@
+.block {
+  margin-top: 28px !important;
+}
+
+.main_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.paper {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 900px;
+
+  padding: clamp(var(--mantine-spacing-md), 5vw, 30px) !important;
+
+  background-color: var(--bg-container) !important;
+  border: 2px solid var(--border-container) !important;
+  border-radius: 18px !important;
+
+  box-shadow: none !important;
+}
+
+.container {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Инпуты Mantine */
+/* -------------------------------------------------------------------------- */
+
+.paper {
+  :global(.mantine-InputWrapper-label) {
+    margin-bottom: 6px;
+
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  :global(.mantine-InputWrapper-description) {
+    margin-top: 4px;
+
+    color: var(--subtitle);
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  :global(.mantine-Input-input),
+  :global(.mantine-Select-input),
+  :global(.mantine-MultiSelect-input),
+  :global(.mantine-DateInput-input),
+  :global(.mantine-Textarea-input) {
+    min-height: 42px;
+
+    border: 1px solid var(--border-container);
+    border-radius: 10px;
+
+    background-color: #202020;
+    color: var(--text-primary);
+
+    transition:
+      border-color 150ms ease,
+      background-color 150ms ease,
+      box-shadow 150ms ease;
+
+    &::placeholder {
+      color: var(--subtitle);
+      opacity: 0.75;
+    }
+
+    &:focus,
+    &:focus-within {
+      border-color: var(--gold-primary);
+      background-color: #202020;
+
+      box-shadow: 0 0 0 1px
+        color-mix(in srgb, var(--gold-primary), transparent 75%);
+    }
+
+    &:disabled {
+      background-color: #191919;
+      opacity: 0.6;
+    }
+  }
+
+  :global(.mantine-Textarea-input) {
+    min-height: 90px;
+    padding-top: 10px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Select / MultiSelect */
+/* -------------------------------------------------------------------------- */
+
+.paper {
+  :global(.mantine-Select-dropdown),
+  :global(.mantine-MultiSelect-dropdown) {
+    overflow: hidden;
+
+    border: 1px solid var(--border-container);
+    border-radius: 10px;
+
+    background-color: #202020;
+  }
+
+  :global(.mantine-Select-option),
+  :global(.mantine-MultiSelect-option) {
+    color: var(--text-primary);
+
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--gold-primary),
+        transparent 90%
+      );
+    }
+
+    &[data-checked],
+    &[data-combobox-selected] {
+      background-color: color-mix(
+        in srgb,
+        var(--gold-primary),
+        transparent 85%
+      );
+
+      color: var(--text-primary);
+    }
+  }
+
+  :global(.mantine-MultiSelect-pill) {
+    border: 1px solid color-mix(in srgb, var(--gold-primary), transparent 55%);
+
+    background-color: color-mix(in srgb, var(--gold-primary), transparent 88%);
+
+    color: var(--text-primary);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* SegmentedControl — выбор тарифа */
+/* -------------------------------------------------------------------------- */
+
+.paper {
+  :global(.mantine-SegmentedControl-root) {
+    padding: 4px;
+
+    border: 1px solid var(--border-container);
+    border-radius: 12px;
+
+    background-color: #202020;
+  }
+
+  :global(.mantine-SegmentedControl-indicator) {
+    border-radius: 8px;
+
+    background-color: var(--gold-primary);
+  }
+
+  :global(.mantine-SegmentedControl-label) {
+    color: var(--subtitle);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  :global(.mantine-SegmentedControl-label[data-active]) {
+    color: #121212;
+  }
+}
+
+.avatar_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  margin-top: 10px;
+
+  .dropZone_container {
+    position: relative;
+
+    .dropZone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 250px;
+      height: 250px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--border-container);
+      border-radius: 50%;
+
+      background-color: #202020;
+
+      transition:
+        border-color 150ms ease,
+        background-color 150ms ease;
+
+      &:hover {
+        border-color: color-mix(in srgb, var(--gold-primary), transparent 35%);
+      }
+    }
+  }
+}
+
+.md_editor {
+  overflow: hidden;
+
+  border: 1px solid var(--border-container);
+  border-radius: 10px;
+
+  background-color: #202020;
+
+  color: var(--text-primary);
+
+  :global(.mdxeditor-toolbar) {
+    border-bottom: 1px solid var(--border-container);
+
+    background-color: #202020;
+  }
+
+  :global(.mdxeditor) {
+    background-color: #202020;
+    color: var(--text-primary);
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    color: var(--text-primary);
+
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--gold-primary),
+        transparent 90%
+      );
+    }
+  }
+
+  select,
+  option {
+    border-color: var(--border-container);
+    background-color: #202020 !important;
+    color: var(--text-primary);
+  }
+}
+
+.premium_overlay {
+  border-radius: 10px;
+
+  background-color: rgba(18, 18, 18, 0.82) !important;
+
+  backdrop-filter: blur(12px);
+}
+
+.policies_list {
+  margin-top: 24px;
+}
+
+.paper {
+  :global(.mantine-Button-root) {
+    min-height: 42px;
+
+    border: 1px solid var(--gold-primary);
+    border-radius: 10px;
+
+    background-color: var(--gold-primary);
+    color: #121212;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      transform 150ms ease;
+
+    &:hover:not(:disabled) {
+      border-color: color-mix(in srgb, var(--gold-primary), transparent 30%);
+
+      background-color: color-mix(
+        in srgb,
+        var(--gold-primary),
+        transparent 20%
+      );
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+
+    &:disabled {
+      border-color: var(--border-container);
+      background-color: #2a2a2a;
+      color: var(--subtitle);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .paper {
+    padding: 5px 5px !important;
+    border-radius: 14px !important;
+  }
+
+  .avatar_container {
+    .dropZone_container {
+      .dropZone {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}

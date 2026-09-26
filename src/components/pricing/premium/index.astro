@@ -1,0 +1,99 @@
+---
+import styles from "./index.module.scss";
+import HeroSection from "../shared/Hero.astro";
+import FeaturesSection from "../shared/Features.astro";
+import SummarySection from "../shared/Summary.astro";
+import { PlanCheckout } from "../shared/PlanCheckout";
+
+export const PREMIUM_HERO = {
+  badge: "Расширенная страница",
+  title: "Сохраните историю жизни полностью",
+  description:
+    "Создайте полноценную страницу памяти с фотогалереей, расширенной биографией, настройками приватности и совместным управлением для всей семьи.",
+  price: "3000 ₽",
+  note: "Единовременный платеж",
+};
+
+export const PREMIUM_FEATURES = {
+  features: [
+    "Всё, что входит в бесплатный тариф",
+    "Неограниченная фотогалерея",
+    "Полная биография с расширенным форматированием",
+    "Настройки приватности (публично / только для семьи)",
+    "Неограниченное количество сообщений соболезнования",
+    "Совместное управление для членов семьи",
+    "Приоритетная поддержка",
+  ],
+};
+
+export const PREMIUM_SUMMARY = {
+  rows: [
+    {
+      label: "Расширенная страница",
+      value: "3000 ₽",
+    },
+    {
+      label: "Хранение",
+      value: "Включено",
+    },
+    {
+      label: "Фотогалерея",
+      value: "Включено",
+    },
+    {
+      label: "Совместное управление",
+      value: "Включено",
+    },
+  ],
+
+  totalLabel: "К оплате",
+  totalValue: "3000 ₽",
+
+  note: "Единовременный платеж. После покупки страница останется доступной без ежемесячных списаний.",
+};
+
+export const PREMIUM_POLICIES = [
+  {
+    id: "terms",
+    parts: [
+      { text: "Я принимаю " },
+      { text: "Условия использования", href: "/document/terms" },
+      { text: " и " },
+      { text: "Публичную оферту", href: "/document/offer" },
+    ],
+  },
+  {
+    id: "privacy",
+    parts: [
+      { text: "Я ознакомился с " },
+      { text: "Политикой конфиденциальности", href: "/document/privacy" },
+    ],
+  },
+  {
+    id: "data",
+    parts: [{ text: "Я даю согласие на обработку персональных данных" }],
+  },
+  {
+    id: "refund",
+    parts: [
+      { text: "Я ознакомился с " },
+      { text: "Условиями возврата денежных средств", href: "/document/refund" },
+    ],
+  },
+];
+---
+
+<div class={styles.page}>
+  <HeroSection {...PREMIUM_HERO} />
+
+  <div class={styles.layout}>
+    <div class={styles.content}>
+      <FeaturesSection features={PREMIUM_FEATURES.features} />
+    </div>
+
+    <aside class={styles.sidebar}>
+      <SummarySection {...PREMIUM_SUMMARY} />
+      <PlanCheckout client:load policies={PREMIUM_POLICIES} />
+    </aside>
+  </div>
+</div>

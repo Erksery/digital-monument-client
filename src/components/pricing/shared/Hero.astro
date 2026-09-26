@@ -1,0 +1,31 @@
+---
+import styles from "./index.module.scss";
+
+interface Props {
+  badge?: string;
+  title: string;
+  description: string;
+  price: string;
+  note?: string;
+}
+
+const { badge, title, description, price, note } = Astro.props;
+---
+
+<section class={styles.hero}>
+  <div class={styles.hero_content}>
+    {badge && <p class={styles.badge}>{badge}</p>}
+
+    <h1 class={styles.title}>{title}</h1>
+
+    <p class={styles.description}>
+      {description}
+    </p>
+
+    <div class={styles.price}>
+      <span class={styles.price_value}>{price}</span>
+    </div>
+
+    {note && <p class={styles.note}>{note}</p>}
+  </div>
+</section>
