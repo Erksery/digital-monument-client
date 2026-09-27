@@ -26,16 +26,12 @@
   width: 100%;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Инпуты Mantine */
-/* -------------------------------------------------------------------------- */
-
 .paper {
   :global(.mantine-InputWrapper-label) {
-    margin-bottom: 6px;
-
+    margin-bottom: 3px;
+    margin-top: 5px;
     color: var(--text-primary);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
   }
 
@@ -91,10 +87,6 @@
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Select / MultiSelect */
-/* -------------------------------------------------------------------------- */
-
 .paper {
   :global(.mantine-Select-dropdown),
   :global(.mantine-MultiSelect-dropdown) {
@@ -138,10 +130,6 @@
     color: var(--text-primary);
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* SegmentedControl — выбор тарифа */
-/* -------------------------------------------------------------------------- */
 
 .paper {
   :global(.mantine-SegmentedControl-root) {
