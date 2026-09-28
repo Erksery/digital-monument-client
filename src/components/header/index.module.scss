@@ -122,15 +122,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex: 1;
 
     gap: 5px;
-
     padding: 10px;
-
     border-radius: 10px;
-
     text-decoration: none;
   }
 
@@ -247,7 +243,25 @@
   align-items: center;
   gap: 7px;
 
+  .info {
+    min-width: 0;
+    max-width: 180px;
+  }
+
+  label,
   p {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  p {
+    margin: 0;
+
     font-size: 11px;
     color: gray;
   }

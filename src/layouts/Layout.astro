@@ -33,7 +33,7 @@ import Footer from "./footer/FooterLayout.astro";
 <style is:global>
   :root {
     --max-content-width: 1350px;
-    --side-padding: 1.2rem;
+    
     --text-color: #c9c9c9;
     --card-background: #1a1a1a;
 
@@ -69,6 +69,9 @@ import Footer from "./footer/FooterLayout.astro";
     scrollbar-gutter: stable;
 
     scroll-behavior: smooth;
+
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
   }
 
   p {
@@ -106,6 +109,8 @@ import Footer from "./footer/FooterLayout.astro";
         transparent 90%
       );
     }
+
+    
   }
 
   .layout-wrapper {
@@ -125,5 +130,13 @@ import Footer from "./footer/FooterLayout.astro";
     :root {
       --side-padding: 2rem;
     }
+
+    
   }
+
+   @media (max-width: 768px) {
+    html, body{
+      font-size: 13px !important;
+    }
+   }
 </style>
